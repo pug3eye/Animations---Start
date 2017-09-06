@@ -2,7 +2,9 @@ import {
   Component, 
   trigger, 
   state, 
-  style 
+  style, 
+  transition,
+  animate,
 } from '@angular/core';
 
 @Component({
@@ -17,7 +19,9 @@ import {
       state('highlighted', style({
         'background-color': 'blue',
         transform: 'translateX(100px)'
-      }))
+      })),
+      transition('normal => highlighted', animate(300)),
+      transition('highlighted => normal', animate(800))
     ])
   ]
 })
